@@ -21,8 +21,8 @@ def mult_recall(el1, el2, cdict, ldict):
 
 def precision(cdict, ldict):
     """Computes overall extended BCubed precision for the C and L dicts."""
-    return numpy.mean(numpy.nan_to_num([numpy.mean([mult_precision(el1, el2, cdict, ldict) \
-        for el2 in cdict if cdict[el1] & cdict[el2]]) for el1 in cdict]))
+    return numpy.nanmean([numpy.mean([mult_precision(el1, el2, cdict, ldict) \
+        for el2 in cdict if cdict[el1] & cdict[el2]]) for el1 in cdict])
 
 def recall(cdict, ldict):
     """Computes overall extended BCubed recall for the C and L dicts."""
